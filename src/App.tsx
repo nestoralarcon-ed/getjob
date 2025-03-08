@@ -24,9 +24,6 @@ function App() {
             </Link>
             <nav className="hidden md:flex space-x-6">
               <Link to="/" className="hover:text-[#3c9dff] transition-colors">Inicio</Link>
-              <a href="#about" className="hover:text-[#3c9dff] transition-colors">Sobre Mí</a>
-              <a href="#skills" className="hover:text-[#3c9dff] transition-colors">Habilidades</a>
-              <a href="#projects" className="hover:text-[#3c9dff] transition-colors">Proyectos</a>
               <Link to="/blog" className="hover:text-[#3c9dff] transition-colors">Blog</Link>
             </nav>
           </div>
