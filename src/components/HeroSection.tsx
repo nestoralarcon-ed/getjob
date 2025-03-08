@@ -114,6 +114,13 @@ const HeroSection: React.FC = () => {
     };
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="hero" className="relative min-h-screen flex flex-col justify-center overflow-hidden">
       <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full" />
@@ -139,20 +146,20 @@ const HeroSection: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="#about" 
+              <button 
+                onClick={() => scrollToSection('about')}
                 className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-[#3c9dff] to-[#a667ff] rounded-full text-white font-medium hover:opacity-90 transition-all duration-300 transform hover:scale-105 hover:shadow-glow"
               >
                 Descubre mi historia
                 <ArrowRight size={18} className="ml-2" />
-              </a>
+              </button>
               
-              <a 
-                href="#projects" 
+              <button 
+                onClick={() => scrollToSection('projects')}
                 className="inline-flex items-center px-8 py-3 bg-[#2a2a3d] border border-[#3c9dff]/30 rounded-full text-white font-medium hover:bg-[#3c9dff]/10 transition-all duration-300"
               >
                 Quiero una oportunidad
-              </a>
+              </button>
             </div>
             
             <div className="mt-12">
@@ -194,7 +201,6 @@ const HeroSection: React.FC = () => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowFullScreen
                 ></iframe>
-                {/* // URL del video para cambiar en el futuro */}
               </div>
             </div>
           </div>
